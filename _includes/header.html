@@ -16,11 +16,9 @@
         </a>
 
         <ul class="nav">
-          {% for page in site.pages %}
-            {% if page.title and page.title != 'Home' %}
-            <li><a href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a></li>
-            {% endif %}
-          {% endfor %}
+          <li><a href="{{site.baseurl/about}}">about</a></li>
+          <li><a href="{{site.baseurl/cv}}">cv</a></li>
+          <li><a href="{{site.baseurl/blog}}">blog</a></li>
           <li><a href="{{ site.github }}" target="_blank">Github</a></li>
         </ul>
       </nav>
