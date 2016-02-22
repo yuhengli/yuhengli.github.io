@@ -3,5 +3,13 @@ layout: default
 title: Home
 slug: home
 ---
-
-index
+<table width="100%" cellpadding="5" cellspacing="5" border="0">
+	<tbody>
+		<tr>
+			<td width="22%"  align="center" valign="top">
+				<br>
+				<img src="images/me.png" alt="picture"></td>
+			<td width="22%" valign="top">{% include post.html with paginator.posts %}</td>
+		</tr>
+	</tbody>
+</table>
