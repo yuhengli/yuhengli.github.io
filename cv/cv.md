@@ -5,27 +5,27 @@ permalink: /cv/
 slug: cv
 ---
 
-CV##Yuheng (Lyle) Li
-----
-####OBJECTIVE	
+## Yuheng (Lyle) Li
+-------
+#### OBJECTIVE	
 Full-time Software Engineer
-####EDUCATION	
+####	EDUCATION	
 *	MSIT, eBusiness Technology, Carnegie Mellon University, Pittsburgh, PA (GPA 3.94/4.0)	2015-2016
 *	M.Eng., Data Mining, University of Chinese Academy of Sciences, China	2012-2015
 *	B.S., Electronic Information Science and Technology, Jilin University, China (GPA 3.81/4.0)	2008-2012
 
-####TECHNICAL SKILLS		                                                                                                               
+#### TECHNICAL SKILLS		                                                                                                               
 *	Language: Java; C#, Python, C/C++, JavaScript, HTML/CSS, JSP, Shell Scripting.
 *	Tools: J2EE, .NET, WPF, JDBC, Oracle 11g, MySQL, SVN/Git, Maven, Tomcat, Visual Studio, Eclipse, AWS, Azure.
 *	Knowledge: OOP/OOD, Data Mining, Machine Learning, Algorithms, Software Architecture, digital electronics.
 
-####INTERNSHIP	
+#### INTERNSHIP	
 *	Assistant Software Engineer, Chinese Academy of Science(CAS), Beijing China	2014-2015
 
 Responsible for developing GeoVis, a GoogleEarth-like Information Analysis System;
 1 year+ software development and scientific research with 20+ people team, 10,000+ line codes experiences.
 
-####PROJECTS	
+#### PROJECTS	
 -	Web Services Load Balancing with Horizontal Scaling, Pittsburgh, PA	02/2016
 
 	-	Utilized both AWS and Azure to programmatically control resources in response to demand;
@@ -50,5 +50,5 @@ Responsible for developing GeoVis, a GoogleEarth-like Information Analysis Syste
 	-	Customized 50+ data-driven usercontrols for data visualization, like track simulation, tri-state treeview etc.;
 	-	Enhanced the data visualization effect by implementing an adaptive K-means to cluster spatial and temporal data from different altitude scales, leading to real-time data rearrangement and visualization.
 	
-####COURSES	
+#### COURSES	
 Java/J2EE Programming, Cloud Computing, Data Structure, Data Mining, Machine Learning, Natural Language Processing, Signal and Information Processing, Analog/Digital Electronics, Laws of Computer Technology.
