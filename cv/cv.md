@@ -5,7 +5,7 @@ permalink: /cv/
 slug: cv
 ---
 
-CV##Yuheng (Lyle) Li
+##Yuheng (Lyle) Li
 ----
 ####OBJECTIVE	
 Full-time Software Engineer
