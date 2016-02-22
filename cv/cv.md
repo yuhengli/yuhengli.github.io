@@ -6,8 +6,9 @@ slug: cv
 ---
 
 ## Yuheng (Lyle) Li
--------
+------
 #### OBJECTIVE	
+
 Full-time Software Engineer
 ####	EDUCATION	
 *	MSIT, eBusiness Technology, Carnegie Mellon University, Pittsburgh, PA (GPA 3.94/4.0)	2015-2016
@@ -52,3 +53,4 @@ Responsible for developing GeoVis, a GoogleEarth-like Information Analysis Syste
 	
 #### COURSES	
 Java/J2EE Programming, Cloud Computing, Data Structure, Data Mining, Machine Learning, Natural Language Processing, Signal and Information Processing, Analog/Digital Electronics, Laws of Computer Technology.
+
