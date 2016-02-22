@@ -18,7 +18,7 @@ google_analytics: UA-52446115-1
 
 paginate: 2
 comments: true
-paginate_path: "/page/:num"
+paginate_path: "/blog/:num"
 
 sass:
   style: :compressed
