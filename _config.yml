@@ -27,5 +27,3 @@ sass:
 # Build settings
 markdown  : kramdown
 permalink : /:title/
-highlighter: pygments
-gems: [jekyll-paginate]
