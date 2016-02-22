@@ -26,6 +26,7 @@ sass:
 
 # Build settings
 markdown  : kramdown
+highlighter: rouge
 permalink : /:title/
 highlighter: false
 gems: [jekyll-paginate]
