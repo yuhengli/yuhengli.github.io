@@ -1,3 +1,5 @@
 name: HOME | Yuheng Li
 markdown: kramdown
 permalink: /blog/:year/:month/:day/:title
+sass:
+	sass_dir: _sass
