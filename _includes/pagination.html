@@ -3,7 +3,7 @@
     <ul>
       {% if paginator.previous_page %}
         {% if paginator.previous_page == 1 %}
-        <li><a class="newer-posts" href="{{ site.baseurl}/blog}/">&laquo;</a></li>
+        <li><a class="newer-posts" href="{{ site.baseurl}}/blog/">&laquo;</a></li>
         {% else %}
         <li><a class="newer-posts" href="{{ site.baseurl }}/blog/page/{{ paginator.previous_page }}/">&laquo;</a></li>
         {% endif %}
