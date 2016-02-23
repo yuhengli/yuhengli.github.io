@@ -5,7 +5,7 @@ date:   2016-02-21 10:28:08
 categories: info
 comments: true
 ---
-[yuhengli.github.io](http://yuhengli.github.io) is:
+[yuhengli.com](http://yuhengli.com) is:
 
 *	Licensed under a [Creative Commons Attribution 3.0 Unported License](http://creativecommons.org/licenses/by/3.0/deed.en_US).
 
