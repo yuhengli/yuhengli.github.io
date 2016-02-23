@@ -1,0 +1,30 @@
+# Site settings
+title: Yuheng Li
+email: yuhengli@me.com
+description: Yuheng's Home
+#baseurl: "http://yuhengli.github.io"
+url: "http://yuhengli.github.io"
+permalink: /blog/:year/:month/:day/:title
+
+author:
+  name     : 'Yuheng Li'
+  email    : yuhengli@me.com
+  url      : http://yuhengli.github.io
+  facebook : http://facebook.com/liyuheng1989
+  twitter  : http://twitter.com/liyuheng
+
+github: https://github.com/yuhengli
+disqus_shortname: "Lyle"
+google_analytics: UA-52446115-1
+
+paginate: 3
+comments: true
+paginate_path: "/blog/page/:num"
+
+sass:
+  style: :compressed
+  sass_dir: _sass
+
+# Build settings
+markdown  : kramdown
+highlighter: rough
