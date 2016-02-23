@@ -1,7 +1,7 @@
 # Site settings
-title: Yuheng Li
+title: Home
 email: yuhengli@me.com
-description: Yuheng's Home
+description: Home
 #baseurl: "http://yuhengli.github.io"
 url: "http://yuhengli.github.io"
 permalink: /blog/:year/:month/:day/:title
