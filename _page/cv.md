@@ -4,9 +4,10 @@ title: CV
 permalink: /cv/
 slug: cv
 ---
+--------
 
 ## Yuheng (Lyle) Li
-------
+[download](../_assets/resume.pdf)
 
 ####	OBJECTIVE	
 Full-time Software Engineer

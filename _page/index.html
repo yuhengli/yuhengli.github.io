@@ -1,0 +1,13 @@
+---
+layout: page
+title: blog
+slug: blog
+---
+
+<div class="post-list">
+  {% for post in paginator.posts %}
+    {% include post.html %}
+  {% endfor %}
+
+  {% include pagination.html %}
+</div>
