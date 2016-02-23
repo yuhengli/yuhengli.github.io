@@ -3,13 +3,19 @@ layout: default
 title: Home
 slug: home
 ---
-<table width="100%" cellpadding="5" cellspacing="5" border="0">
+<table width="90%" cellpadding="5" cellspacing="5" border="0">
 	<tbody>
 		<tr>
-			<td width="22%"  align="center" valign="top">
+			<td width="40%"  align="right" valign="top">
 				<br>
-				<img src="images/me.png" alt="picture"></td>
-			<td width="22%" valign="top">{% include post.html with paginator.posts %}</td>
+				<img src="images/me.png" height="256" alt="picture"></td>
+				<td width="10%"></td>
+			<td width="40%" align="left" valign="top">
+
+{% capture my-include %}{% include intro.md %}{% endcapture %}
+{{ my-include | markdownify }}
+
+			</td>
 		</tr>
 	</tbody>
 </table>
