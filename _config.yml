@@ -2,7 +2,7 @@
 title: Yuheng Li
 email: yuhengli@me.com
 description: Yuheng's Home
-baseurl: "http://yuhengli.github.io"
+#baseurl: "http://yuhengli.github.io"
 url: "http://yuhengli.github.io"
 permalink: /blog/:year/:month/:day/:title
 
@@ -27,5 +27,6 @@ sass:
 
 # Build settings
 markdown  : kramdown
-highlighter: rough
+highlighter: false
+gems: [jekyll-paginate]
 
