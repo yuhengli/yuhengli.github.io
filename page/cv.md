@@ -7,7 +7,7 @@ slug: cv
 --------
 
 ## Yuheng (Lyle) Li
-[download](../_assets/resume.pdf)
+[download](../assets/resume.pdf)
 
 ####	OBJECTIVE	
 Full-time Software Engineer
