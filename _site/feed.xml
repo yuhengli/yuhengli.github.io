@@ -3,15 +3,15 @@
   <channel>
     <title>Yuheng Li</title>
     <description>Home</description>
-    <link>http://yuhengli.github.io/</link>
-    <atom:link href="http://yuhengli.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 23 Feb 2016 11:38:50 -0500</pubDate>
-    <lastBuildDate>Tue, 23 Feb 2016 11:38:50 -0500</lastBuildDate>
+    <link>http://www.yuhengli.com/</link>
+    <atom:link href="http://www.yuhengli.com/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Tue, 23 Feb 2016 18:05:54 -0500</pubDate>
+    <lastBuildDate>Tue, 23 Feb 2016 18:05:54 -0500</lastBuildDate>
     <generator>Jekyll v3.1.2</generator>
     
       <item>
         <title>Welcome to my site!</title>
-        <description>&lt;p&gt;&lt;a href=&quot;http://yuhengli.github.io&quot;&gt;yuhengli.github.io&lt;/a&gt; is:&lt;/p&gt;
+        <description>&lt;p&gt;&lt;a href=&quot;http://yuhengli.com&quot;&gt;yuhengli.com&lt;/a&gt; is:&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;
@@ -27,8 +27,8 @@
 &lt;/ul&gt;
 </description>
         <pubDate>Sun, 21 Feb 2016 05:28:08 -0500</pubDate>
-        <link>http://yuhengli.github.io/blog/2016/02/21/website-launched</link>
-        <guid isPermaLink="true">http://yuhengli.github.io/blog/2016/02/21/website-launched</guid>
+        <link>http://www.yuhengli.com/blog/2016/02/21/website-launched</link>
+        <guid isPermaLink="true">http://www.yuhengli.com/blog/2016/02/21/website-launched</guid>
         
         
         <category>info</category>
