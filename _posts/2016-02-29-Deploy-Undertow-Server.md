@@ -9,16 +9,14 @@ comments: true
 
 
 #### create maven project
-{% highlight shell %}
-
+```bash
 mvn -B archetype:generate -DarchetypeGroupId=org.apache.maven.archetypes -DgroupId=com.axis.app -DartifactId=server
-
-{% endhighlight %}
+```
 
 An `App.java` has been created under `path/src/main/java/com/axis/app/`
 
 #### Add Undertow dependency
-{% highlight xml %}
+```xml
 <dependency>
   	<groupId>io.undertow</groupId>
   	<artifactId>undertow-core</artifactId>
@@ -34,7 +32,7 @@ An `App.java` has been created under `path/src/main/java/com/axis/app/`
   	<artifactId>slf4j-log4j12</artifactId>
   	<version>1.7.7</version>
 </dependency>
-{% endhighlight %}
+```
 
 #### incude a plugin to execute App.java class
 ```xml
@@ -59,7 +57,7 @@ An `App.java` has been created under `path/src/main/java/com/axis/app/`
 <build>
 ```	
 #### Create undertow hello world service；
-{% highlight java %}
+```java
 import io.undertow.Undertow;
 import io.undertow.server.*;
 import io.undertow.util.Headers;
@@ -78,10 +76,10 @@ public class HelloWorldServer {
         server.start();
    	}
 }
-{% endhighlight %}	
+```	
 #### Build and run Maven project
-{% highlight shell %}
+```bash
 mvn compile
 mvn exec:java
-{% endhighlight %}	
+```	
 
