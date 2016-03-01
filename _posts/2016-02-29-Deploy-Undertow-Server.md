@@ -7,9 +7,6 @@ comments: true
 
 ---
 
-Deploy Undertow Server
-======
-
 
 #### create maven project
 
