@@ -4,11 +4,11 @@ title:  "Deploy Undertow Server"
 date:   2016-02-29 22:59:08
 categories: web-service
 comments: true
-
 ---
 
 
 #### create maven project
+
 ```bash
 mvn -B archetype:generate -DarchetypeGroupId=org.apache.maven.archetypes -DgroupId=com.axis.app -DartifactId=server
 ```
@@ -16,6 +16,7 @@ mvn -B archetype:generate -DarchetypeGroupId=org.apache.maven.archetypes -Dgroup
 An `App.java` has been created under `path/src/main/java/com/axis/app/`
 
 #### Add Undertow dependency
+
 ```xml
 <dependency>
   	<groupId>io.undertow</groupId>
@@ -35,6 +36,7 @@ An `App.java` has been created under `path/src/main/java/com/axis/app/`
 ```
 
 #### incude a plugin to execute App.java class
+
 ```xml
 <build>
    <plugins>
@@ -55,8 +57,10 @@ An `App.java` has been created under `path/src/main/java/com/axis/app/`
         </plugin>
     </plugins>
 <build>
-```	
+```
+
 #### Create undertow hello world service；
+
 ```java
 import io.undertow.Undertow;
 import io.undertow.server.*;
@@ -76,8 +80,10 @@ public class HelloWorldServer {
         server.start();
    	}
 }
-```	
+```
+
 #### Build and run Maven project
+
 ```bash
 mvn compile
 mvn exec:java
