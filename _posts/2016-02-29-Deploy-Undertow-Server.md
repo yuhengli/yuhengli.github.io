@@ -10,10 +10,12 @@ comments: true
 
 #### create maven project
 {% highlight shell %}
-mvn -B archetype:generate -DarchetypeGroupId=org.apache.maven.archetypes -DgroupId=com.axis.app -DartifactId=server
-{% endhighlight %}
-An `App.java` has been created under `path/src/main/java/com/axis/app/`
 
+mvn -B archetype:generate -DarchetypeGroupId=org.apache.maven.archetypes -DgroupId=com.axis.app -DartifactId=server
+
+{% endhighlight %}
+
+An `App.java` has been created under `path/src/main/java/com/axis/app/`
 
 #### Add Undertow dependency
 {% highlight xml %}
