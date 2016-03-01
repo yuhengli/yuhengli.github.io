@@ -26,8 +26,8 @@ sass:
   sass_dir: _sass
 
 # Build settings
-markdown  : kramdown
-highlighter: rouge
+#markdown  : kramdown
+#highlighter: rouge
 #highlighter: false
 #gems: [jekyll-paginate]
 
