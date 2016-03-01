@@ -21,13 +21,15 @@ paginate: 3
 comments: true
 paginate_path: "/blog/page/:num"
 
+# Build settings
+markdown  : kramdown
+highlighter: rouge
+#highlighter: false
+#gems: [jekyll-paginate]
+
 sass:
   style: :compressed
   sass_dir: _sass
 
-# Build settings
-#markdown  : kramdown
-#highlighter: rouge
-#highlighter: false
-#gems: [jekyll-paginate]
+
 
