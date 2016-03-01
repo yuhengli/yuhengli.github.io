@@ -4,3 +4,6 @@ Yuheng's Homepage
 ```Java
 System.out.println("Hello World");
 ```
+```bash
+akw -F"," 'BEGIN {}'
+```
