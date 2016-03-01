@@ -37,7 +37,7 @@ An `App.java` has been created under `path/src/main/java/com/axis/app/`
 {% endhighlight %}
 
 #### incude a plugin to execute App.java class
-{% highlight xml %}
+```xml
 <build>
    <plugins>
         <plugin>
@@ -57,7 +57,7 @@ An `App.java` has been created under `path/src/main/java/com/axis/app/`
         </plugin>
     </plugins>
 <build>
-{% endhighlight %}	
+```	
 #### Create undertow hello world service；
 {% highlight java %}
 import io.undertow.Undertow;
