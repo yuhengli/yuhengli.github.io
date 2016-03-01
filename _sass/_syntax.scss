@@ -30,7 +30,6 @@
 
     code {
       white-space: pre;
-      padding: 15px 20px;
 
       * {
         white-space: nowrap; // this sets all children inside to nowrap
@@ -41,6 +40,7 @@
   code {
     background-color: transparent;
     color:#f8f8f2
+    padding: 15px 20px;
   }
 
   .c { color: #75715e } /* Comment */
