@@ -16,7 +16,7 @@ An `App.java` has been created under `path/src/main/java/com/axis/app/`
 
 
 #### Add Undertow dependency
-
+{% highlight xml %}
 	<dependency>
   		<groupId>io.undertow</groupId>
   		<artifactId>undertow-core</artifactId>
@@ -32,9 +32,11 @@ An `App.java` has been created under `path/src/main/java/com/axis/app/`
   		<artifactId>slf4j-log4j12</artifactId>
   		<version>1.7.7</version>
   	</dependency>
-#### incude a plugin to execute App.java class
+{% endhighlight %}
 
-	<build>
+#### incude a plugin to execute App.java class
+{% highlight xml %}
+    <build>
       <plugins>
          <plugin>
             <groupId>org.codehaus.mojo</groupId>
@@ -53,9 +55,9 @@ An `App.java` has been created under `path/src/main/java/com/axis/app/`
          </plugin>
       </plugins>
     </build>
-  	
+{% endhighlight %}	
 #### Create undertow hello world service；
-
+{% highlight java %}
 	import io.undertow.Undertow;
 	import io.undertow.server.*;
 	import io.undertow.util.Headers;
@@ -74,10 +76,10 @@ An `App.java` has been created under `path/src/main/java/com/axis/app/`
         server.start();
    		}
 	}
-	
+{% endhighlight %}	
 #### Build and run Maven project
-
+{% highlight shell %}
 	mvn compile
 	mvn exec:java
-	
+{% endhighlight %}	
 
