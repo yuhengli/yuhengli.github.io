@@ -21,23 +21,23 @@ slug: projects
 
 #### Data Mining
 
-* Twitter based Entity Linking System. [[PDF](https://s3.amazonaws.com/yuhengbucket/papers/HEL.pdf)]
-* An Improved Adaptive Clustering Method based on K-means. [[PDF](http://www.yuhengli.com/assets/Clustering_Research_Based_on_Temporal_and_Spatial_Attributes_of_Data.pdf)]
-* Discovering Hierarchical Topic Evolution in Time-Stamped Documents. [[PDF](http://www.yuhengli.com/assets/A_user_interest_topic_model_for microblog_entity_linking.pdf)]
-* A User interest topic model for microblog entity linking. [[PDF](http://www.yuhengli.com/assets/Discovering Hierarchical Topic Evolution_in_Time-Stamped_Documents.pdf)]
+* Twitter based Entity Linking System. [[paper](https://s3.amazonaws.com/yuhengbucket/papers/HEL.pdf)]
+* An Improved Adaptive Clustering Method based on K-means. [[paper](http://www.yuhengli.com/assets/Clustering_Research_Based_on_Temporal_and_Spatial_Attributes_of_Data.pdf)]
+* Discovering Hierarchical Topic Evolution in Time-Stamped Documents. [[paper](http://www.yuhengli.com/assets/A_user_interest_topic_model_for microblog_entity_linking.pdf)]
+* A User interest topic model for microblog entity linking. [[paper](http://www.yuhengli.com/assets/Discovering Hierarchical Topic Evolution_in_Time-Stamped_Documents.pdf)]
 
 #### .Net Development
 * GeoVis Information Analysis System
 
 #### Prototype & Strategy
-* E3 Reverse Auction System Design
-* Sure-Park Garage Parking System
-* UPMC Online Pharmacy Prototype
-* Toyota Vehicle to Infrastructure Networking
-* UPMC Internet of Things Infrastructure
+* E3 Reverse Auction System Design. [[report](https://s3.amazonaws.com/yuhengbucket/tasks/task9.pdf)]
+* Sure-Park Garage Parking System. [[report](https://s3.amazonaws.com/yuhengbucket/tasks/task6.pdf)]
+* UPMC Online Pharmacy Prototype. [[demo](http://upmcphamarcy.s3-website-us-east-1.amazonaws.com)] [[report](https://s3.amazonaws.com/yuhengbucket/tasks/task3.pdf)]
+* Toyota Vehicle to Infrastructure Networking. [[report](https://s3.amazonaws.com/yuhengbucket/tasks/task2.pdf)]
+* UPMC Internet of Things Infrastructure. [[report](https://s3.amazonaws.com/yuhengbucket/tasks/task1.pdf)]
 
 #### Embedded System
-* Bluetooth Attendance System based on ARM7
+* Bluetooth Attendance System based on ARM7 [[paper](http://www.yuhengli.com/assets/Bluetooth_Attendance_System.pdf)]
 
 
 
