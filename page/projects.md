@@ -16,8 +16,10 @@ slug: projects
 #### Cloud Computing
 * Web Services Load Balancing with Horizontal Scaling
 
-#### Web Application
-* Carnegie Financial Web Services for Mutual Fund Transaction [[Link](http://cfsenvironment.pmymaat6rx.us-west-2.elasticbeanstalk.com/)]
+#### Java Application
+* Carnegie Financial Web Services for Mutual Fund Transaction. [[Link](http://cfsenvironment.pmymaat6rx.us-west-2.elasticbeanstalk.com/)][[git](https://github.com/yuhengli/CFS.git)]
+* Campaign Contribution Survey App. [[git](https://github.com/yuhengli/CampaignContributionApplication.git)]
+* My Favorite Sites[[git](https://github.com/yuhengli/MyFavSites.git)]
 
 #### Data Mining
 
