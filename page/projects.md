@@ -22,6 +22,7 @@ slug: projects
 #### Data Mining
 
 * Twitter based Entity Linking System. [[paper](https://s3.amazonaws.com/yuhengbucket/papers/HEL.pdf)]
+* Hierarchical Entity Linking based on Microblogs[[paper](http://www.yuhengli.com/assets/Hierarchical_Entity_Linking_based_on_Microblogs.pdf)]
 * An Improved Adaptive Clustering Method based on K-means. [[paper](http://www.yuhengli.com/assets/Clustering_Research_Based_on_Temporal_and_Spatial_Attributes_of_Data.pdf)]
 * Discovering Hierarchical Topic Evolution in Time-Stamped Documents. [[paper](http://www.yuhengli.com/assets/A_user_interest_topic_model_for microblog_entity_linking.pdf)]
 * A User interest topic model for microblog entity linking. [[paper](http://www.yuhengli.com/assets/Discovering Hierarchical Topic Evolution_in_Time-Stamped_Documents.pdf)]
