@@ -4,6 +4,7 @@ title: About
 permalink: /about/
 slug: about
 ---
+--------
 
 I am a software engineer with a proven ability to develop object oriented applications and big data technical innovations.
 
