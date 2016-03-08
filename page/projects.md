@@ -22,9 +22,9 @@ slug: projects
 #### Data Mining
 
 * Twitter based Entity Linking System. [[PDF](https://s3.amazonaws.com/yuhengbucket/papers/HEL.pdf)]
-* An Improved Adaptive Clustering Method based on K-means. [[PDF]()]
-* Discovering Hierarchical Topic Evolution in Time-Stamped Documents. [[PDF]()]
-* A User interest topic model for microblog entity linking. [[PDF]()]
+* An Improved Adaptive Clustering Method based on K-means. [[PDF](http://www.yuhengli.com/assets/Clustering_Research_Based_on_Temporal_and_Spatial_Attributes_of_Data.pdf)]
+* Discovering Hierarchical Topic Evolution in Time-Stamped Documents. [[PDF](http://www.yuhengli.com/assets/A_user_interest_topic_model_for microblog_entity_linking.pdf)]
+* A User interest topic model for microblog entity linking. [[PDF](http://www.yuhengli.com/assets/Discovering Hierarchical Topic Evolution_in_Time-Stamped_Documents.pdf)]
 
 #### .Net Development
 * GeoVis Information Analysis System
