@@ -61,7 +61,7 @@ Full-time Software Engineer
 	
 	-	Analyzed and measured the performance and availability of the web service with Apache JMeter.
 
--	**Twitter based Entity Linking System**, Beijing, China 06/2015  [Paper PDF (Chinese)](https://s3.amazonaws.com/yuhengbucket/papers/HEL.pdf)
+-	**Twitter based Entity Linking System**, Beijing, China 06/2015  [[PDF (Chinese)](https://s3.amazonaws.com/yuhengbucket/papers/HEL.pdf)]
 
 	-	Developed an entity linking system with C#, WPF, Twitter REST APIs, Wikimedia and Hadoop;
 	
