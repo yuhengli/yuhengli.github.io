@@ -13,7 +13,7 @@ slug: cv
 Full-time Software Engineer
 
 ####	EDUCATION	
-*	MSIT, [eBusiness Technology](http://www.ebusiness.cs.cmu.edu), [Carnegie Mellon University](http://www.cmu.edu), Pittsburgh, PA (GPA 3.94/4.0)	2015-2016
+*	MSIT, [eBusiness Technology](http://www.ebusiness.cs.cmu.edu), [Carnegie Mellon University](http://www.cmu.edu), Pittsburgh, PA (GPA 3.95/4.0)	2015-2016
 
 *	M.Eng., Data Mining, [University of Chinese Academy of Sciences](http://english.ucas.ac.cn/Pages/default.aspx), China	2012-2015
 
