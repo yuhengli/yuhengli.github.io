@@ -9,7 +9,7 @@ slug: projects
 
 #### Ongoing
 
-1. Twitter Analytics Web Service (Phase1)
+1. [Twitter Analytics Web Service (Phase1)](http://www.yuhengli.com/blog/2016/02/29/Deploy-Undertow-Server)
 2. Search Engine Optimization
 3. Consistency in Distributed Key-Value Stores
 
