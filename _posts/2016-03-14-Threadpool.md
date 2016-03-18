@@ -14,7 +14,9 @@ In the phase1, we are required to
 > 2. Design schema as well as configure and optimize MySQL and HBase databases to deal with scale and improve throughput.
 
 ### ETL Stage
+
 #### JSON
+
 The raw tweet data are JSON files stored in Amazon S3, to have a clearer view about the structure, you can you [Jason Online Parser](http://json.parser.online.fr) to parse the file.
 
 ```JSON
@@ -31,6 +33,7 @@ The raw tweet data are JSON files stored in Amazon S3, to have a clearer view ab
 }
 ...
 ```
+
 The JSON format could be further parsed by [GSON](https://sites.google.com/site/gson/gson-user-guide), we use ```gson.fromJson(String json, Class<T> classOf T)``` parse Json into special designed class `Tweet`, the function could use reflection to inspect the class variable of `Tweet` and put the value of JSON field into the variable with the same name, if fields are wrapped in JSON, a class with the same structure should be used to contain the wrapped values.
 
 #### Clean
@@ -54,16 +57,16 @@ and we are asked to response all tweets from required userid with required hasht
 So we decided to split the hashtags within one tweet, this may double the total size of dataset, but save much more time because otherwise mySQL has to traverse the whole database using `like` to figure out whose tweet has the hashtag.
 For example, we convert tweet:
 
-id|tweet_id|user_id|density|content|hashtags
---|:--------:|:--------:|:-----:|:---------|:--------:
-1|123454332|1|1.000|I love CC #CC #CMU| CC,CMU
+|id|tweet_id|user_id|density|content|hashtags|
+|--|:--------:|:--------:|:-----:|:---------|:--------:|
+|1|123454332|1|1.000|I love CC #CC #CMU| CC,CMU|
 
 into
 
-id|tweet_id|user_id|density|content|hashtag
---|:--------:|:--------:|:-----:|:---------|:--------:
-1|123454332|1|1.000|I love CC #CC #CMU| CC
-1|123454332|1|1.000|I love CC #CC #CMU| CMU
+|id|tweet_id|user_id|density|content|hashtag|
+|--|:--------:|:--------:|:-----:|:---------|:--------:|
+|1|123454332|1|1.000|I love CC #CC #CMU| CC|
+|1|123454332|1|1.000|I love CC #CC #CMU| CMU|
 
 So we can easily create index on hashtag to make search faster.
 
