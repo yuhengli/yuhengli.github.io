@@ -24,7 +24,7 @@ The raw tweet data are JSON files stored in Amazon S3, to have a clearer view ab
 "created_at":"Thu May 15 09:02:25 +0000 2014",
 "id":466866178913083400,
 "id_str":"466866178913083392",
-"text":"あれ、イベ垢定期流れてない？('A`)","
+"text":"あれ、イベ垢定期流れてない？('A`)",
 "user":{
 "id":304930190,
 "id_str":"304930190",
