@@ -57,7 +57,7 @@ So we decided to split the hashtags within one tweet, this may double the total 
 For example, we convert tweet:
 
 |id|tweet_id|user_id|density|content|hashtags|
-|--|:-------:|:--------:|:-----:|:---------|:--------:|
+| -- | :---: |:-----:|:----:|:---|:---:|
 |1|123454332|1|1.000|I love CC #CC #CMU| CC,CMU|
 
 into
