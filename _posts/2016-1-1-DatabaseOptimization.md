@@ -49,6 +49,7 @@ Moreover, as the project requires, we should also generate *sentimental density*
 
 #### Transform
 Queries in this question are of the same format, which allows us to further optimized the data based on the query. The request come in the same format:
+
 > GET /q2?userid=[123456]&hashtag=[tag]
 
 and we are asked to response all tweets from required userid with required hashtag. Note that a user may post multiple tweets, a tweet may contain multiple hashtag, we could not represent such a 2 dimension information with only one row in database without hard-merging hashtags. 
@@ -63,7 +64,7 @@ For example, we convert tweet:
 into
 
 |id|tweet_id|user_id|density|content|hashtag|
-|--|:--------:|:--------:|:-----:|:---------|:--------:|
+|--|--------|--------|-----|---------|--------|
 |1|123454332|1|1.000|I love CC #CC #CMU| CC|
 |1|123454332|1|1.000|I love CC #CC #CMU| CMU|
 
