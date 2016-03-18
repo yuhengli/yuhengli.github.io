@@ -56,18 +56,11 @@ and we are asked to response all tweets from required userid with required hasht
 So we decided to split the hashtags within one tweet, this may double the total size of dataset, but save much more time because otherwise mySQL has to traverse the whole database using `like` to figure out whose tweet has the hashtag.
 For example, we convert tweet:
 
-id|tweet_id|user_id|density|content|hashtags
---|:--------:|:--------:|:-----:|:---------|:--------:
-1|123454332|1|1.000|I love CC #CC #CMU| CC,CMU
+|id|tweet_id|user_id|density|content|hashtags|
+|--|:-------:|:--------:|:-----:|:---------|:--------:|
+|1|123454332|1|1.000|I love CC #CC #CMU| CC,CMU|
 
 into
-
----
-id:1
-tweet_id: 12342
-
----
-
 
 |id|tweet_id|user_id|density|content|hashtag|
 |--|--------|--------|-----|---------|--------|
