@@ -30,7 +30,6 @@ The raw tweet data are JSON files stored in Amazon S3, to have a clearer view ab
 "id_str":"304930190",
 "name":"Haruka♂",
 }
-...
 ```
 
 The JSON format could be further parsed by [GSON](https://sites.google.com/site/gson/gson-user-guide), we use ```gson.fromJson(String json, Class<T> classOf T)``` parse Json into special designed class `Tweet`, the function could use reflection to inspect the class variable of `Tweet` and put the value of JSON field into the variable with the same name, if fields are wrapped in JSON, a class with the same structure should be used to contain the wrapped values.
