@@ -62,6 +62,13 @@ id|tweet_id|user_id|density|content|hashtags
 
 into
 
+---
+id:1
+tweet_id: 12342
+
+---
+
+
 |id|tweet_id|user_id|density|content|hashtag|
 |--|--------|--------|-----|---------|--------|
 |1|123454332|1|1.000|I love CC #CC #CMU| CC|
