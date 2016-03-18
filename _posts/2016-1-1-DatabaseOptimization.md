@@ -63,7 +63,7 @@ For example, we convert tweet:
 into
 
 |id|tweet_id|user_id|density|content|hashtag|
-|--|--------|--------|-----|---------|--------|
+|---|---|---|---|---|---|
 |1|123454332|1|1.000|I love CC #CC #CMU| CC|
 |1|123454332|1|1.000|I love CC #CC #CMU| CMU|
 
