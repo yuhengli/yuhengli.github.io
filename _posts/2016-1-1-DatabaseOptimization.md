@@ -19,7 +19,7 @@ In the phase1, we are required to
 
 The raw tweet data are JSON files stored in Amazon S3, to have a clearer view about the structure, you can you [Jason Online Parser](http://json.parser.online.fr) to parse the file.
 
-```Java
+```java
 { 
 "created_at":"Thu May 15 09:02:25 +0000 2014",
 "id":466866178913083400,
@@ -97,7 +97,8 @@ Another advantage of using MD5 is that encrypted string is **32 character fixed-
 So instead of hashtag, we recalculate the MD5 of each `user_id`-`hashtag` pair and create index on `MD5` column.
 
 The optimized SQL query is like:
-```SQL
+
+```sql
 SELECT * FROM twitter WHERE user_id=123 AND md5=MD5(CONCAT([userid],[hashtag]));
 ```
 
