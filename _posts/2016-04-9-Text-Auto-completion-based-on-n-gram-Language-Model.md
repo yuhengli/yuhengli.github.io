@@ -71,12 +71,14 @@ In the previous stage, we take raw data from HDFS and write MR output back to HD
 The first way to do that is by: **concatenate all MR output files -> sort -> retrieve the first 100 lines** right in the base. But I failed because the sorting requires a lot of storage for intermediate results, and it is rather slow!
 
 A improved solution is using **Hive**, it can take files on HDFS as a database and perform SQL-like query on these data using MapReduce jobs. First, we create table using:
+```sql	
+CREATE EXTERNAL TABLE ngram (key STRING, value INT) ROW FORMAT DELIMITED FIELDS TERMINATED BY '\t' LOCATION 'hdfs://52.91.198.12:9000/output';
+```
 	
-	CREATE EXTERNAL TABLE ngram (key STRING, value INT) ROW FORMAT DELIMITED FIELDS TERMINATED BY '\t' LOCATION 'hdfs://52.91.198.12:9000/output';
-		
 Then, select the top 100 n-gram phases using:
-
+```sql
 	select * from ngram order by `value` desc limit 100;
+```
 
 ### Generate text prediction candidates
 
@@ -127,33 +129,34 @@ The HTML part is really simple. Simply paste this into your file index.html:
 
 	<!DOCTYPE html>
 	<html>
-		<head>
-  			<title>Auto-complete tutorial</title>
-  			<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-  			<script src="auto-complete.js"></script>
-		</head>
-		<body>
-  			<input type="text" value="" placeholder="Search" id="keyword">
-		</body>
+	 <head>
+  	 <title>Auto-complete tutorial</title>
+  	 <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  	 <script src="auto-complete.js"></script>
+	 </head>
+	 <body>
+  	 	<input type="text" value="" placeholder="Search" id="keyword">
+	 </body>
 	</html>
 	
 JavaScript Part:
 
 	var MIN_LENGTH = 3;
 	$( document ).ready(function() {
-		$("#keyword").keyup(function() {
-		var keyword = $("#keyword").val();
-		if (keyword.length >= MIN_LENGTH) {
-			$.get( "auto-complete.php", { keyword: keyword } )
-			  .done(function( data ) {
-			    console.log(data);
-			  });
-			}
-		});
+	 $("#keyword").keyup(function() {
+	 var keyword = $("#keyword").val();
+	 if (keyword.length >= MIN_LENGTH) {
+	 	$.get( "auto-complete.php", { keyword: keyword } )
+		.done(function( data ) {
+		 	console.log(data);
+		 });
+		}
+	 });
 	});
 The get method take a php page as parameter and expect an array as return value, the javascript will simply display the returned array as a list view below the input textbox.
 So PHP part will be like:
 
+```php
 	<?php
 		// get the search term
 		$searchTerm = strtolower(trim( $_REQUEST['term'] ));
@@ -163,9 +166,7 @@ So PHP part will be like:
 		$response = \Httpful\Request::get($url)->addHeader('Accept','application/json')->send();
 		//... parse the response into a return array:
 		...
-		...
-				
-		
+		...		
 	    $data[] = array(
 			'label' => $first[$key],
 			'probability' => $second[$key]
@@ -173,6 +174,7 @@ So PHP part will be like:
 		echo json_encode($data);
 		flush();>
 	?>
+```
 Notice that here the web service use Hbase REST server to get data form hbase, as default, the hbase server is running on port 8080, you should first start HBase rest server by
 
 	./home/hadoop/hbase/bin/
