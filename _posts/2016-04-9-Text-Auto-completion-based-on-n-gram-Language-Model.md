@@ -7,11 +7,6 @@ tag: cloud computing,language model, MapReduce, Hbase
 comments: true
 
 ---
-
-
-Text Auto-completion based on n-gram Language Model
-====
-
 The individual project of 15619 this week is of great fun, it is about building an Input Text Predictor based on language model.
 
 Generally, the text predictor is based on a huge n-gram semantic model, which could be achieved from wikipedia corpus, and we are required using MapReduce to calculate the frequency of each n-gram.
