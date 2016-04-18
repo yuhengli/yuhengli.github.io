@@ -33,13 +33,15 @@ Full-time Software Engineer
 1 year+ software development and scientific research with 20+ people team, 10,000+ line codes experiences.
 
 #### PROJECTS	
--	**Twitter Analytics Web Service**, Pittsburgh, PA	02/2016 - Now
+-	**Twitter Analytics Web Service**,  
+Pittsburgh, PA  	02/2016 - Now
 
 	- Used Hadoop on Amazon EMR to conduct ETL on 300 millions (1T) of raw tweet messages;	- Tuned and op7mized HBase and MySQL performance to serve complex read queries;	- Built a RESTful web applica7on running on high performance non-blocking Undertow server as frontend;	- Achieved 10,000+ rps using load balancer and backend cluster under $0.85/hour limited budgets.
 
 
 	
--	**Social Networking Services with Heterogeneous Back-ends**, Pittsburgh, PA	03/2016 - 04/2016
+-	**Social Networking Services with Heterogeneous Back-ends**,  
+Pittsburgh, PA	03/2016 - 04/2016
 
 	-	Implemented Mapper and Reducer with Java and ran on AWS Elastic MapReduce;
 	
@@ -48,7 +50,8 @@ Full-time Software Engineer
 	-	Analyzed page-view trends and derive the trending topics with Python and bash 
 	scripting(awk, sed, etc).
 
--	**[Carnegie Financial Web Services for Mutual Fund Transaction](http://cfsenvironment.pmymaat6rx.us-west-2.elasticbeanstalk.com)**, Pittsburgh, PA	01/2016 - 02/2016
+-	**[Carnegie Financial Web Services for Mutual Fund Transaction](http://cfsenvironment.pmymaat6rx.us-west-2.elasticbeanstalk.com)**  
+Pittsburgh, PA	01/2016 - 02/2016
 
 	-	Developed a three-tier RESTful Web application with Java J2EE, JSP, Bootstrap, Tomcat and MySQL;
 	
@@ -58,7 +61,8 @@ Full-time Software Engineer
 	
 	-	Analyzed and measured the performance and availability of the web service with Apache JMeter.
 
--	**Twitter based Entity Linking System**, Beijing, China 02/2015 - 06/2015  [[PDF (Chinese)](https://s3.amazonaws.com/yuhengbucket/papers/HEL.pdf)]
+-	[**Twitter based Entity Linking System**](https://s3.amazonaws.com/yuhengbucket/papers/HEL.pdf)  
+Beijing, China 02/2015 - 06/2015  
 
 	-	Developed an entity linking system with C#, WPF, Twitter REST APIs, Wikimedia and Hadoop;
 	
@@ -66,7 +70,8 @@ Full-time Software Engineer
 	
 	-	Proposed an improved Entity Linking algorithm, which models multiple features(user preferences, popularity etc.) of wiki entities and levitated the In-KB accuracy by 5% (compared with [KAURI](http://delivery.acm.org/10.1145/2490000/2487686/p68-shen.pdf?ip=128.237.171.161&id=2487686&acc=ACTIVE%20SERVICE&key=A792924B58C015C1%2E5A12BE0369099858%2E4D4702B0C3E38B35%2E4D4702B0C3E38B35&CFID=755364260&CFTOKEN=81254369&__acm__=1456197614_5bd94c7a309ed9aff7d6f6cab563de92)) to 90.17%.
 
--	**[GeoVis Information Analysis System](http://www.geodo.cn/chanpinshow.php/coid_14.htm)**(Product developed at CAS, Beijing China)	08/2014 - 05/2015
+-	**[GeoVis Information Analysis System](http://www.geodo.cn/chanpinshow.php/coid_14.htm)**  
+CAS, Beijing China 08/2014 - 05/2015
 	-	Developed a software plugin with C#, WPF, Oracle 11g and SVN based on a GoogleEarth Like 3D globe;
 	
 	-	Customized 50+ data-driven usercontrols for data visualization, like track simulation, tri-state treeview etc.;
