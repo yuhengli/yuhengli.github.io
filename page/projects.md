@@ -9,15 +9,15 @@ slug: projects
 
 #### Ongoing
 
-1. [Twitter Analytics Web Service (Phase3)](http://www.yuhengli.com/blog/2. 2016/03/12/15619-Team-Project)
-2. [CAINIAO - Demand Forecast & Storage Planning Project](https://tianchi.aliyun.com/competition/introduction.htm?spm=5176.100066.333.2.wOSVW1&raceId=231530)
-2. Customer Prediction based on KNN and Decision Tree
-3. Batch Processing with MapReduce
+0. Stream Processing with Kafka and Samza
+1. [CAINIAO - Demand Forecast & Storage Planning Project](https://tianchi.aliyun.com/competition/introduction.htm?spm=5176.100066.333.2.wOSVW1&raceId=231530)
+2. A Supply Chain Makeover for Sephora
 
 #### Cloud Computing
-1. Web Services Load Balancing with Horizontal Scaling
-2. Social Networking Timeline with Heterogeneous Back-ends
-3. 
+1. [Twitter Analytics Web Service](http://www.yuhengli.com/blog/2. 2016/03/12/15619-Team-Project)
+2. Web Services Load Balancing with Horizontal Scaling
+3. Social Networking Timeline with Heterogeneous Back-ends
+4. PageRank on Spark using Scala
 
 #### Java Application
 1. Carnegie Financial Web Services for Mutual Fund Transaction. [[Link](http://cfsenvironment.pmymaat6rx.us-west-2.elasticbeanstalk.com/)][[git](https://github.com/yuhengli/CFS.git)]
@@ -33,7 +33,7 @@ slug: projects
 3. Discovering Hierarchical Topic Evolution in Time-Stamped Documents. [[paper](http://www.yuhengli.com/assets/A_user_interest_topic_model_for microblog_entity_linking.pdf)]
 4. A User interest topic model for microblog entity linking. [[paper](http://www.yuhengli.com/assets/Discovering Hierarchical Topic Evolution_in_Time-Stamped_Documents.pdf)]
 5. An Improved Adaptive Clustering Method based on K-means. [[paper](http://www.yuhengli.com/assets/Clustering_Research_Based_on_Temporal_and_Spatial_Attributes_of_Data.pdf)]
-6. Weighted KNN[[git](https://github.com/yuhengli/task11.git)]
+7. Customer Prediction based on weighted KNN and Decision Tree[[git](https://github.com/yuhengli/task11.git)]
 
 #### .Net Development
 1. GeoVis Information Analysis System
