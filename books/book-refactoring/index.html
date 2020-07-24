@@ -29,7 +29,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://martinfowler.com/books/refact2.jpg">
 <meta property="article:published_time" content="2020-07-22T17:58:53.000Z">
-<meta property="article:modified_time" content="2020-07-23T05:52:47.867Z">
+<meta property="article:modified_time" content="2020-07-24T05:52:33.213Z">
 <meta property="article:author" content="大恒">
 <meta property="article:tag" content="重构">
 <meta property="article:tag" content="编程">
@@ -201,10 +201,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2020-07-22 10:58:53 / 修改时间：22:52:47" itemprop="dateCreated datePublished" datetime="2020-07-22T10:58:53-07:00">2020-07-22</time>
+              <time title="创建时间：2020-07-22 10:58:53" itemprop="dateCreated datePublished" datetime="2020-07-22T10:58:53-07:00">2020-07-22</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-07-23 22:52:33" itemprop="dateModified" datetime="2020-07-23T22:52:33-07:00">2020-07-23</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -300,6 +306,22 @@
 <p>易于修改的代码才是好的代码</p>
 </blockquote>
 <p>这一章的例子让我初步了解到了重构是什么，其实我们日常工作中经常面临重构，小到使用一个helper方法，大到套用复杂的设计模式，其根本目的，是为了写出容易测试，维护，协同开发的代码，有时候写一个通俗易懂的逻辑，比减少一个循环意义大得多，这也是企业级代码有别于个人代码的地方。</p>
+<h2 id="第二章：重构的原则"><a href="#第二章：重构的原则" class="headerlink" title="第二章：重构的原则"></a>第二章：重构的原则</h2><p>本章从具体讨论了重构的定义，为什么要重构，重构过程中会遇到的问题等。</p>
+<h3 id="什么是重构"><a href="#什么是重构" class="headerlink" title="什么是重构"></a>什么是重构</h3><p>重构是一项对代码进行修改的行为，重构的目的是为了增强代码的可读性、易用性、可扩展性，这一点已经被作者反复提及。同时，重构应该是循序渐进的若干微小改动，重构的过程应该保持代码的可用性。</p>
+<blockquote>
+<p>如果有人说他为了重构一段代码，让其好几天都不可用，这不是重构。</p>
+</blockquote>
+<h3 id="两顶帽子"><a href="#两顶帽子" class="headerlink" title="两顶帽子"></a>两顶帽子</h3><p><strong>增加新的功能</strong>和<strong>重构老的代码</strong>就像两顶帽子，应该在我们开发的过程中不断交替。</p>
+<h3 id="为什么要重构"><a href="#为什么要重构" class="headerlink" title="为什么要重构"></a>为什么要重构</h3><ul>
+<li>优化设计结构</li>
+<li>让代码易于理解</li>
+<li>易于发现问题</li>
+<li>提高开发效率</li>
+</ul>
+<h3 id="重构会遇到的问题"><a href="#重构会遇到的问题" class="headerlink" title="重构会遇到的问题"></a>重构会遇到的问题</h3><ol>
+<li>老板不理解。重构不会带来新的功能，又要花费时间，听起来是费力不讨好的事情，这个时候可以尝试去解释重构可以为将来的代码迭代带来方便，节省更多的时间，当然，如果老板还是无法理解，就不要告诉他好了。</li>
+<li>拖慢开发进度， ownership，Branches, testsing, legacy code, databases(略过…)</li>
+</ol>
 <p><em>（未完待续）</em></p>
 
     </div>
@@ -400,7 +422,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#第一章：重构，从一个例子谈起"><span class="nav-number">1.</span> <span class="nav-text">第一章：重构，从一个例子谈起</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#重构的信号"><span class="nav-number">1.1.</span> <span class="nav-text">重构的信号</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#在重构之前"><span class="nav-number">1.2.</span> <span class="nav-text">在重构之前</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#重构的步骤"><span class="nav-number">1.3.</span> <span class="nav-text">重构的步骤</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#子函数增强结构"><span class="nav-number">1.3.1.</span> <span class="nav-text">子函数增强结构</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#分离计算和排版"><span class="nav-number">1.3.2.</span> <span class="nav-text">分离计算和排版</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#多态代替条件"><span class="nav-number">1.3.3.</span> <span class="nav-text">多态代替条件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#总结"><span class="nav-number">1.3.4.</span> <span class="nav-text">总结</span></a></li></ol></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#第一章：重构，从一个例子谈起"><span class="nav-number">1.</span> <span class="nav-text">第一章：重构，从一个例子谈起</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#重构的信号"><span class="nav-number">1.1.</span> <span class="nav-text">重构的信号</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#在重构之前"><span class="nav-number">1.2.</span> <span class="nav-text">在重构之前</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#重构的步骤"><span class="nav-number">1.3.</span> <span class="nav-text">重构的步骤</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#子函数增强结构"><span class="nav-number">1.3.1.</span> <span class="nav-text">子函数增强结构</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#分离计算和排版"><span class="nav-number">1.3.2.</span> <span class="nav-text">分离计算和排版</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#多态代替条件"><span class="nav-number">1.3.3.</span> <span class="nav-text">多态代替条件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#总结"><span class="nav-number">1.3.4.</span> <span class="nav-text">总结</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第二章：重构的原则"><span class="nav-number">2.</span> <span class="nav-text">第二章：重构的原则</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#什么是重构"><span class="nav-number">2.1.</span> <span class="nav-text">什么是重构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#两顶帽子"><span class="nav-number">2.2.</span> <span class="nav-text">两顶帽子</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#为什么要重构"><span class="nav-number">2.3.</span> <span class="nav-text">为什么要重构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#重构会遇到的问题"><span class="nav-number">2.4.</span> <span class="nav-text">重构会遇到的问题</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
