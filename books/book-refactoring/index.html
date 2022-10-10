@@ -254,29 +254,27 @@
 
       
         <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><img src="https://martinfowler.com/books/refact2.jpg" class="" title="refactoring has">
+
 <p>作者：Martin Fowler</p>
 <p>感谢Shawn推荐。</p>
 <a id="more"></a>
+
 <p>提升程序员的自我修养的第一课：学习重构代码。</p>
-<h2 id="第一章重构从一个例子谈起"><a class="markdownIt-Anchor" href="#第一章重构从一个例子谈起"></a> 第一章：重构，从一个例子谈起</h2>
-<p>对于重构这个宽泛的话题，作者并没有一上来就给出关于重构明确的定义，而是通过直接重构一段代码来向读者解释什么是重构。</p>
+<h2 id="第一章：重构，从一个例子谈起"><a href="#第一章：重构，从一个例子谈起" class="headerlink" title="第一章：重构，从一个例子谈起"></a>第一章：重构，从一个例子谈起</h2><p>对于重构这个宽泛的话题，作者并没有一上来就给出关于重构明确的定义，而是通过直接重构一段代码来向读者解释什么是重构。</p>
 <p>书中例子是实现计算演出的费用及积分的功能，其中设计的类有<em>Play</em>, <em>Performance</em>, 每场演出会根据剧目和人数的不同而有相应的计算费用的方式，不同费用又会产生相应的积分，输出是一张账单。原始代码将所有逻辑放在一个方法中，方法遍历每一个<em>performance</em>，并通过switch-case来实现针对不同种类的演出的计价逻辑。</p>
-<h3 id="重构的信号"><a class="markdownIt-Anchor" href="#重构的信号"></a> 重构的信号</h3>
-<blockquote>
+<h3 id="重构的信号"><a href="#重构的信号" class="headerlink" title="重构的信号"></a>重构的信号</h3><blockquote>
 <p>当眼前的代码结构让你无法轻而易举的为其添加新的功能，是时候考虑先对其重构，再去添加新的功能。</p>
 </blockquote>
 <p>不是所有的代码都值得花时间去重构，这里主要指的是那些比较大型的工程项目，需要多人协同开发，并需要不断更新，添加新的功能的项目，重构的目的是为了让代码更短或者更高效，而是更容易读懂、维护和扩展。</p>
-<h3 id="在重构之前"><a class="markdownIt-Anchor" href="#在重构之前"></a> 在重构之前</h3>
-<blockquote>
+<h3 id="在重构之前"><a href="#在重构之前" class="headerlink" title="在重构之前"></a>在重构之前</h3><blockquote>
 <p>在重构之前，首先要拥有一套靠谱的测试。</p>
 </blockquote>
 <p>作者在书的第一章反复强调单元测试和小修改的重要性。小修改可以保证错误的可控，可回溯，测试则将人为带来的失误降到最低，虽然<strong>小修改-&gt;测试-&gt;小修改-&gt;测试</strong> 这种模式十分耗时且枯燥，但随着项目规模的扩大，前期“浪费”的时间可以大大降低后期维护的成本。</p>
-<h3 id="重构的步骤"><a class="markdownIt-Anchor" href="#重构的步骤"></a> 重构的步骤</h3>
-<p>作者分三步对原始代码进行重构：用子函数增强结构，分离计算和排版，利用多态代替条件。</p>
-<h4 id="子函数增强结构"><a class="markdownIt-Anchor" href="#子函数增强结构"></a> 子函数增强结构</h4>
-<p>这一步是为了是让代码有更强的可读性，与其通过注释来解释下面一段代码的功能，不如将完成一项任务的代码封装到一个方法中（并添加相应的测试），然后通过一个清晰的方法名来说明他的功能。从而得到如下结构：</p>
+<h3 id="重构的步骤"><a href="#重构的步骤" class="headerlink" title="重构的步骤"></a>重构的步骤</h3><p>作者分三步对原始代码进行重构：用子函数增强结构，分离计算和排版，利用多态代替条件。</p>
+<h4 id="子函数增强结构"><a href="#子函数增强结构" class="headerlink" title="子函数增强结构"></a>子函数增强结构</h4><p>这一步是为了是让代码有更强的可读性，与其通过注释来解释下面一段代码的功能，不如将完成一项任务的代码封装到一个方法中（并添加相应的测试），然后通过一个清晰的方法名来说明他的功能。从而得到如下结构：</p>
 <p><em>function statement…</em></p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> result</span><br><span class="line"><span class="keyword">for</span> performance <span class="keyword">in</span> performances:</span><br><span class="line">	result += formatline(amountFor(performance))</span><br><span class="line">result += formatline(totalAmount(performaces))</span><br><span class="line">result += formatline(totalCredits())</span><br><span class="line"><span class="keyword">return</span> result</span><br></pre></td></tr></table></figure>
+
 <p>其中</p>
 <ul>
 <li><em>amountFor(performance)</em>  用来计算每场演出的费用</li>
@@ -284,60 +282,50 @@
 <li><em>totalCredits(performances)</em> 用来计算总积分</li>
 </ul>
 <p>这一步用到了很多重构的概念，以后会逐个进行解释，包括: <em>Extract Function，Replace Temp with Query，Inline variable，Change function declaration，Split loop，Slide statements</em>…</p>
-<h4 id="分离计算和排版"><a class="markdownIt-Anchor" href="#分离计算和排版"></a> 分离计算和排版</h4>
-<p>注意到上面的例子，最终输出是一个经过排版的账单，这个账单的形式目前的要求仅仅是字符串，但未来可能是Html或者任何其他形式。如果可以将数据和排版形式去耦合，可以进一步提高代码的灵活性。从而得到如下结构</p>
+<h4 id="分离计算和排版"><a href="#分离计算和排版" class="headerlink" title="分离计算和排版"></a>分离计算和排版</h4><p>注意到上面的例子，最终输出是一个经过排版的账单，这个账单的形式目前的要求仅仅是字符串，但未来可能是Html或者任何其他形式。如果可以将数据和排版形式去耦合，可以进一步提高代码的灵活性。从而得到如下结构</p>
 <p><em>function statement…</em></p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">return</span> renderPlainText(createStatementData(invoice, plays));</span><br></pre></td></tr></table></figure>
+
 <p>其中</p>
 <ul>
 <li><em>createStatementData</em>()用来生成一个数据实体，包含通过<em>invoice</em>和<em>plays</em>计算得到的结果</li>
 <li>*renderPlainText()*将数据实体渲染成所需要的格式</li>
 </ul>
 <p>这样通过一个<em>StatementData</em>实现了计算和排版阶段的去耦合</p>
-<h4 id="多态代替条件"><a class="markdownIt-Anchor" href="#多态代替条件"></a> 多态代替条件</h4>
-<p>**多态（polymorphic）**是面向对象编程的重要概念，根据不同对象实例，同一行为可以有不同的表现形式。就本例而言，不同的剧目类型有着不同的价格计算方式，与其通过条件判断来进行区分，可以通过多态的概念来实现计算价格方法与类型之间的去耦合。具体来看，在根据演出计算费用那一步，引入<em>PerformanceCalculator</em>这一概念，并定义其两个子类：</p>
+<h4 id="多态代替条件"><a href="#多态代替条件" class="headerlink" title="多态代替条件"></a>多态代替条件</h4><p><strong>多态（polymorphic）</strong>是面向对象编程的重要概念，根据不同对象实例，同一行为可以有不同的表现形式。就本例而言，不同的剧目类型有着不同的价格计算方式，与其通过条件判断来进行区分，可以通过多态的概念来实现计算价格方法与类型之间的去耦合。具体来看，在根据演出计算费用那一步，引入<em>PerformanceCalculator</em>这一概念，并定义其两个子类：</p>
 <ol>
 <li><em>TragedyCalculator</em></li>
 <li><em>ComedyCalculator</em></li>
 </ol>
 <p><em>PerformanceCalculator</em> 实现 <em>amount()</em>, *credit()*两个方法，并通过工厂 *createPerformanceCalculator()*生产出来：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">switch(aPlay.type):</span><br><span class="line">  case &quot;tragedy&quot; : return new TragedyCalculator(aPerformance, aPlay);</span><br><span class="line">  case &quot;comedy&quot; : return new ComedyCalculator(aPerformance, aPlay);</span><br></pre></td></tr></table></figure>
+
 <p>这样<em>createStatementData()<em>函数只要根据</em>performance</em>类型生产一个<em>calculator</em>，并用它来产生账单就可以了，而不需要</p>
 <p>根据具体<em>performance</em> 类型来做判断。</p>
-<h4 id="总结"><a class="markdownIt-Anchor" href="#总结"></a> 总结</h4>
-<blockquote>
+<h4 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h4><blockquote>
 <p>易于修改的代码才是好的代码</p>
 </blockquote>
 <p>这一章的例子让我初步了解到了重构是什么，其实我们日常工作中经常面临重构，小到使用一个helper方法，大到套用复杂的设计模式，其根本目的，是为了写出容易测试，维护，协同开发的代码，有时候写一个通俗易懂的逻辑，比减少一个循环意义大得多，这也是企业级代码有别于个人代码的地方。</p>
-<h2 id="第二章重构的原则"><a class="markdownIt-Anchor" href="#第二章重构的原则"></a> 第二章：重构的原则</h2>
-<p>本章从具体讨论了重构的定义，为什么要重构，重构过程中会遇到的问题等。</p>
-<h3 id="什么是重构"><a class="markdownIt-Anchor" href="#什么是重构"></a> 什么是重构</h3>
-<p>重构是一项对代码进行修改的行为，重构的目的是为了增强代码的可读性、易用性、可扩展性，这一点已经被作者反复提及。同时，重构应该是循序渐进的若干微小改动，重构的过程应该保持代码的可用性。</p>
+<h2 id="第二章：重构的原则"><a href="#第二章：重构的原则" class="headerlink" title="第二章：重构的原则"></a>第二章：重构的原则</h2><p>本章从具体讨论了重构的定义，为什么要重构，重构过程中会遇到的问题等。</p>
+<h3 id="什么是重构"><a href="#什么是重构" class="headerlink" title="什么是重构"></a>什么是重构</h3><p>重构是一项对代码进行修改的行为，重构的目的是为了增强代码的可读性、易用性、可扩展性，这一点已经被作者反复提及。同时，重构应该是循序渐进的若干微小改动，重构的过程应该保持代码的可用性。</p>
 <blockquote>
 <p>如果有人说他为了重构一段代码，让其好几天都不可用，这不是重构。</p>
 </blockquote>
-<h3 id="两顶帽子"><a class="markdownIt-Anchor" href="#两顶帽子"></a> 两顶帽子</h3>
-<p><strong>增加新的功能</strong>和<strong>重构老的代码</strong>就像两顶帽子，应该在我们开发的过程中不断交替。</p>
-<h3 id="为什么要重构"><a class="markdownIt-Anchor" href="#为什么要重构"></a> 为什么要重构</h3>
-<ul>
+<h3 id="两顶帽子"><a href="#两顶帽子" class="headerlink" title="两顶帽子"></a>两顶帽子</h3><p><strong>增加新的功能</strong>和<strong>重构老的代码</strong>就像两顶帽子，应该在我们开发的过程中不断交替。</p>
+<h3 id="为什么要重构"><a href="#为什么要重构" class="headerlink" title="为什么要重构"></a>为什么要重构</h3><ul>
 <li>优化设计结构</li>
 <li>让代码易于理解</li>
 <li>易于发现问题</li>
 <li>提高开发效率</li>
 </ul>
-<h3 id="重构会遇到的问题"><a class="markdownIt-Anchor" href="#重构会遇到的问题"></a> 重构会遇到的问题</h3>
-<ol>
+<h3 id="重构会遇到的问题"><a href="#重构会遇到的问题" class="headerlink" title="重构会遇到的问题"></a>重构会遇到的问题</h3><ol>
 <li>老板不理解。重构不会带来新的功能，又要花费时间，听起来是费力不讨好的事情，这个时候可以尝试去解释重构可以为将来的代码迭代带来方便，节省更多的时间，当然，如果老板还是无法理解，就不要告诉他好了。</li>
 <li>拖慢开发进度， ownership，Branches, testsing, legacy code, databases(略过…)</li>
 </ol>
-<h2 id="第三章坏味道"><a class="markdownIt-Anchor" href="#第三章坏味道"></a> 第三章：坏味道</h2>
-<p>不是所有的代码都需要或值得花时间去重构，本章罗列出一些坏代码的特征，作为重构的信号。</p>
-<h3 id="迷之命名"><a class="markdownIt-Anchor" href="#迷之命名"></a> 迷之命名</h3>
-<p>好的方法名可以让人不用通读代码而知道其背后的功能，从而大大提高代码的可理解性。另一方面，命名也是代码的试金石，如果你感觉很难为一个方法抽象出一个简单明了的名称，大概率是因为这个代码的职能定义不清。</p>
-<h3 id="重复代码"><a class="markdownIt-Anchor" href="#重复代码"></a> 重复代码</h3>
-<p>重复会大大影响了代码的可维护性和理解性，同时增加测试成本，浪费存储资源。</p>
-<h3 id="过长方法类"><a class="markdownIt-Anchor" href="#过长方法类"></a> 过长方法/类</h3>
-<p>过长的结构带来的问题：</p>
+<h2 id="第三章：坏味道"><a href="#第三章：坏味道" class="headerlink" title="第三章：坏味道"></a>第三章：坏味道</h2><p>不是所有的代码都需要或值得花时间去重构，本章罗列出一些坏代码的特征，作为重构的信号。</p>
+<h3 id="迷之命名"><a href="#迷之命名" class="headerlink" title="迷之命名"></a>迷之命名</h3><p>好的方法名可以让人不用通读代码而知道其背后的功能，从而大大提高代码的可理解性。另一方面，命名也是代码的试金石，如果你感觉很难为一个方法抽象出一个简单明了的名称，大概率是因为这个代码的职能定义不清。</p>
+<h3 id="重复代码"><a href="#重复代码" class="headerlink" title="重复代码"></a>重复代码</h3><p>重复会大大影响了代码的可维护性和理解性，同时增加测试成本，浪费存储资源。</p>
+<h3 id="过长方法-类"><a href="#过长方法-类" class="headerlink" title="过长方法/类"></a>过长方法/类</h3><p>过长的结构带来的问题：</p>
 <ol>
 <li>降低理解性： 过长的结构说明其内部做了很多事情，如果事情太多就不容易理解和抽象，因此需要将其进一步拆解。</li>
 <li>难以复用：越长的代码功能约单一，不容易复用</li>
@@ -348,33 +336,24 @@
 <li>所谓内紧就是内聚性强，功能单一，状态单一，内部的所有变量应该都要被调动起来</li>
 <li>所谓外松就是方法不应该依赖过多外部的参数，这里也顺便提到了过长参数的问题，类似的，我们可以通过封装参数，用方法替代参数等方法来保证参数的精简。</li>
 </ul>
-<h3 id="可变数据mutable-data"><a class="markdownIt-Anchor" href="#可变数据mutable-data"></a> 可变数据（mutable data)</h3>
-<p>数据可以被不受控制的修改终将酿成灾难。所以要严格控制修改数据的方法。比如Encapsulate Variable 来保证修改操作只能通过受限的方法来实现。</p>
-<h3 id="发散修改divergent-change"><a class="markdownIt-Anchor" href="#发散修改divergent-change"></a> 发散修改（Divergent Change）</h3>
-<p>一种**“责任耦合”**现象，造成发散式修改的原因是违反了Single Responsibility Principle(SRP) 即单一功能原则，其结果是”一个类别会因为多种不同的原因而造成改变“。这里引用<a href="http://teddy-chen-tw.blogspot.com/2014/04/1" target="_blank" rel="noopener">“搞笑谈软工”</a>的解释，责任耦合造成的影响是：</p>
+<h3 id="可变数据（mutable-data"><a href="#可变数据（mutable-data" class="headerlink" title="可变数据（mutable data)"></a>可变数据（mutable data)</h3><p>数据可以被不受控制的修改终将酿成灾难。所以要严格控制修改数据的方法。比如Encapsulate Variable 来保证修改操作只能通过受限的方法来实现。</p>
+<h3 id="发散修改（Divergent-Change）"><a href="#发散修改（Divergent-Change）" class="headerlink" title="发散修改（Divergent Change）"></a>发散修改（Divergent Change）</h3><p>一种<strong>“责任耦合”</strong>现象，造成发散式修改的原因是违反了Single Responsibility Principle(SRP) 即单一功能原则，其结果是”一个类别会因为多种不同的原因而造成改变“。这里引用<a href="http://teddy-chen-tw.blogspot.com/2014/04/1" target="_blank" rel="noopener">“搞笑谈软工”</a>的解释，责任耦合造成的影响是：</p>
 <blockquote>
 <ul>
-<li><strong>Modifiability（修改性）</strong>：一個類別會因為多種原因而一直需要被修改，代表不必要的責任耦合或是說缺乏內聚力。例如，一個Account類別除了表達銀行帳戶以外，還需要負責將自己存入資料庫，以及輸出到印表機。因此，帳戶欄位改變、資料儲存方式改變、列印方式改變，都會造成這個Account改變。</li>
-<li><strong>Understandability（可理解性）</strong>：責任耦合的類別比較不容易被理解，因為閱讀程式碼的人需要自行判斷哪些instance variable與method是被哪一種責任所使用。</li>
-<li><strong>Testability（可測性）</strong>：責任耦合的類別其邏輯相較於單一責任的類別來的複雜，也比較不易測試。此外，因為有多種原因會造成同一類別不斷被修改，因此也增加了可能需要伴隨修改測試案例的機會。</li>
+<li><strong>Modifiability（修改性）</strong>：一個類別會因為多種原因而一直需要被修改，代表不必要的責任耦合或是說缺乏內聚力。例如，一個Account類別除了表達銀行帳戶以外，還需要負責將自己存入資料庫，以及輸出到印表機。因此，帳戶欄位改變、資料儲存方式改變、列印方式改變，都會造成這個Account改變。 </li>
+<li><strong>Understandability（可理解性）</strong>：責任耦合的類別比較不容易被理解，因為閱讀程式碼的人需要自行判斷哪些instance variable與method是被哪一種責任所使用。 </li>
+<li><strong>Testability（可測性）</strong>：責任耦合的類別其邏輯相較於單一責任的類別來的複雜，也比較不易測試。此外，因為有多種原因會造成同一類別不斷被修改，因此也增加了可能需要伴隨修改測試案例的機會。 </li>
 <li><strong>Reusability（重複使用性）</strong>：一個負擔太多責任的類別通常隱含它和所處的context有比較緊密的關聯性，因此也比較不容易在其他的context中被重複使用。</li>
 </ul>
 </blockquote>
-<h3 id="散弹修改shotgun-surgery"><a class="markdownIt-Anchor" href="#散弹修改shotgun-surgery"></a> 散弹修改（Shotgun Surgery）</h3>
-<p>与「发散修改」的「责任耦合」相反，散弹修改是「责任分散」，即<strong>某种修改会横跨多个类别</strong>。例如每个类都包含数据库连接和写入的功能，如果这个连接的参数改变，就需要逐个修改每个类的该参数。当你再改动代码的时候遇到「牵一发而动全身」的问题的时候，就要警惕是否犯了散弹修改的错误。</p>
-<h3 id="特征依赖"><a class="markdownIt-Anchor" href="#特征依赖"></a> 特征依赖</h3>
-<p>如果一个模块中的函数被另一个模块中的方法调用的频率高于本地，就应该考虑将它放回该有的位置。一个例外，比如<a href="https://springframework.guru/gang-of-four-design-patterns/" target="_blank" rel="noopener">Gang of Four设计模式</a> 中的Strategy and Visitor就会运用到「让变化只发生在一处」的思想，以牺牲调用距离来换取修改的便利。</p>
-<h3 id="数据泥团data-clumps"><a class="markdownIt-Anchor" href="#数据泥团data-clumps"></a> 数据泥团（Data  Clumps）</h3>
-<p>特指总是一起出现的数据，比如XY坐标，meta data，config data中的各个fields。对于数据泥团，应该通过「Extract Class」等方法将其封装。数据泥团可视为一种重复数据，long parameter也可视作数据泥团的一种表现形式。</p>
-<h3 id="原始类型偏执"><a class="markdownIt-Anchor" href="#原始类型偏执"></a> 原始类型偏执</h3>
-<p>要勤于定义新的类型来反映数据的真实特征，而不是用String和int来描述一切，比如用String来记录电话号码，就丢掉了很多属于电话号码本身的信息和独有的方法。</p>
-<h3 id="switch"><a class="markdownIt-Anchor" href="#switch"></a> Switch</h3>
-<p>程序中应该减少Switch的出现。Switch的本质是根据一个变量的不同内容而运行不同逻辑，可以想象这样的判断会在多处反复发生，频繁使用Switch会带来重复。同时switch的代码通常比较长，内部逻辑关系复杂，为代码的测试带来困难。</p>
-<h3 id="loops"><a class="markdownIt-Anchor" href="#loops"></a> Loops</h3>
-<p>Loop是编程的核心手段之一，作者这里的意思是可以用pipeline来替代loop。</p>
+<h3 id="散弹修改（Shotgun-Surgery）"><a href="#散弹修改（Shotgun-Surgery）" class="headerlink" title="散弹修改（Shotgun Surgery）"></a>散弹修改（Shotgun Surgery）</h3><p>与「发散修改」的「责任耦合」相反，散弹修改是「责任分散」，即<strong>某种修改会横跨多个类别</strong>。例如每个类都包含数据库连接和写入的功能，如果这个连接的参数改变，就需要逐个修改每个类的该参数。当你再改动代码的时候遇到「牵一发而动全身」的问题的时候，就要警惕是否犯了散弹修改的错误。</p>
+<h3 id="特征依赖"><a href="#特征依赖" class="headerlink" title="特征依赖"></a>特征依赖</h3><p>如果一个模块中的函数被另一个模块中的方法调用的频率高于本地，就应该考虑将它放回该有的位置。一个例外，比如<a href="https://springframework.guru/gang-of-four-design-patterns/" target="_blank" rel="noopener">Gang of Four设计模式</a> 中的Strategy and Visitor就会运用到「让变化只发生在一处」的思想，以牺牲调用距离来换取修改的便利。</p>
+<h3 id="数据泥团（Data-Clumps）"><a href="#数据泥团（Data-Clumps）" class="headerlink" title="数据泥团（Data  Clumps）"></a>数据泥团（Data  Clumps）</h3><p>特指总是一起出现的数据，比如XY坐标，meta data，config data中的各个fields。对于数据泥团，应该通过「Extract Class」等方法将其封装。数据泥团可视为一种重复数据，long parameter也可视作数据泥团的一种表现形式。</p>
+<h3 id="原始类型偏执"><a href="#原始类型偏执" class="headerlink" title="原始类型偏执"></a>原始类型偏执</h3><p>要勤于定义新的类型来反映数据的真实特征，而不是用String和int来描述一切，比如用String来记录电话号码，就丢掉了很多属于电话号码本身的信息和独有的方法。</p>
+<h3 id="Switch"><a href="#Switch" class="headerlink" title="Switch"></a>Switch</h3><p>程序中应该减少Switch的出现。Switch的本质是根据一个变量的不同内容而运行不同逻辑，可以想象这样的判断会在多处反复发生，频繁使用Switch会带来重复。同时switch的代码通常比较长，内部逻辑关系复杂，为代码的测试带来困难。</p>
+<h3 id="Loops"><a href="#Loops" class="headerlink" title="Loops"></a>Loops</h3><p>Loop是编程的核心手段之一，作者这里的意思是可以用pipeline来替代loop。</p>
 <p>这里仅列举一些感觉比较重要或者是工作中遇到的怀味道，书中还有很多其他的坏味道我会在日后补充。</p>
-<h2 id="第四章测试"><a class="markdownIt-Anchor" href="#第四章测试"></a> 第四章：测试</h2>
-<p><em>（未完待续）</em></p>
+<h2 id="第四章：测试"><a href="#第四章：测试" class="headerlink" title="第四章：测试"></a>第四章：测试</h2><p><em>（未完待续）</em></p>
 
     </div>
 
@@ -477,7 +456,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#第一章重构从一个例子谈起"><span class="nav-number">1.</span> <span class="nav-text"> 第一章：重构，从一个例子谈起</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#重构的信号"><span class="nav-number">1.1.</span> <span class="nav-text"> 重构的信号</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#在重构之前"><span class="nav-number">1.2.</span> <span class="nav-text"> 在重构之前</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#重构的步骤"><span class="nav-number">1.3.</span> <span class="nav-text"> 重构的步骤</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#子函数增强结构"><span class="nav-number">1.3.1.</span> <span class="nav-text"> 子函数增强结构</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#分离计算和排版"><span class="nav-number">1.3.2.</span> <span class="nav-text"> 分离计算和排版</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#多态代替条件"><span class="nav-number">1.3.3.</span> <span class="nav-text"> 多态代替条件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#总结"><span class="nav-number">1.3.4.</span> <span class="nav-text"> 总结</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第二章重构的原则"><span class="nav-number">2.</span> <span class="nav-text"> 第二章：重构的原则</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#什么是重构"><span class="nav-number">2.1.</span> <span class="nav-text"> 什么是重构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#两顶帽子"><span class="nav-number">2.2.</span> <span class="nav-text"> 两顶帽子</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#为什么要重构"><span class="nav-number">2.3.</span> <span class="nav-text"> 为什么要重构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#重构会遇到的问题"><span class="nav-number">2.4.</span> <span class="nav-text"> 重构会遇到的问题</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第三章坏味道"><span class="nav-number">3.</span> <span class="nav-text"> 第三章：坏味道</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#迷之命名"><span class="nav-number">3.1.</span> <span class="nav-text"> 迷之命名</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#重复代码"><span class="nav-number">3.2.</span> <span class="nav-text"> 重复代码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#过长方法类"><span class="nav-number">3.3.</span> <span class="nav-text"> 过长方法&#x2F;类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#可变数据mutable-data"><span class="nav-number">3.4.</span> <span class="nav-text"> 可变数据（mutable data)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#发散修改divergent-change"><span class="nav-number">3.5.</span> <span class="nav-text"> 发散修改（Divergent Change）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#散弹修改shotgun-surgery"><span class="nav-number">3.6.</span> <span class="nav-text"> 散弹修改（Shotgun Surgery）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#特征依赖"><span class="nav-number">3.7.</span> <span class="nav-text"> 特征依赖</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数据泥团data-clumps"><span class="nav-number">3.8.</span> <span class="nav-text"> 数据泥团（Data  Clumps）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#原始类型偏执"><span class="nav-number">3.9.</span> <span class="nav-text"> 原始类型偏执</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#switch"><span class="nav-number">3.10.</span> <span class="nav-text"> Switch</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#loops"><span class="nav-number">3.11.</span> <span class="nav-text"> Loops</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第四章测试"><span class="nav-number">4.</span> <span class="nav-text"> 第四章：测试</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#第一章：重构，从一个例子谈起"><span class="nav-number">1.</span> <span class="nav-text">第一章：重构，从一个例子谈起</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#重构的信号"><span class="nav-number">1.1.</span> <span class="nav-text">重构的信号</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#在重构之前"><span class="nav-number">1.2.</span> <span class="nav-text">在重构之前</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#重构的步骤"><span class="nav-number">1.3.</span> <span class="nav-text">重构的步骤</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#子函数增强结构"><span class="nav-number">1.3.1.</span> <span class="nav-text">子函数增强结构</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#分离计算和排版"><span class="nav-number">1.3.2.</span> <span class="nav-text">分离计算和排版</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#多态代替条件"><span class="nav-number">1.3.3.</span> <span class="nav-text">多态代替条件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#总结"><span class="nav-number">1.3.4.</span> <span class="nav-text">总结</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第二章：重构的原则"><span class="nav-number">2.</span> <span class="nav-text">第二章：重构的原则</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#什么是重构"><span class="nav-number">2.1.</span> <span class="nav-text">什么是重构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#两顶帽子"><span class="nav-number">2.2.</span> <span class="nav-text">两顶帽子</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#为什么要重构"><span class="nav-number">2.3.</span> <span class="nav-text">为什么要重构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#重构会遇到的问题"><span class="nav-number">2.4.</span> <span class="nav-text">重构会遇到的问题</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第三章：坏味道"><span class="nav-number">3.</span> <span class="nav-text">第三章：坏味道</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#迷之命名"><span class="nav-number">3.1.</span> <span class="nav-text">迷之命名</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#重复代码"><span class="nav-number">3.2.</span> <span class="nav-text">重复代码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#过长方法-类"><span class="nav-number">3.3.</span> <span class="nav-text">过长方法&#x2F;类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#可变数据（mutable-data"><span class="nav-number">3.4.</span> <span class="nav-text">可变数据（mutable data)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#发散修改（Divergent-Change）"><span class="nav-number">3.5.</span> <span class="nav-text">发散修改（Divergent Change）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#散弹修改（Shotgun-Surgery）"><span class="nav-number">3.6.</span> <span class="nav-text">散弹修改（Shotgun Surgery）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#特征依赖"><span class="nav-number">3.7.</span> <span class="nav-text">特征依赖</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数据泥团（Data-Clumps）"><span class="nav-number">3.8.</span> <span class="nav-text">数据泥团（Data  Clumps）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#原始类型偏执"><span class="nav-number">3.9.</span> <span class="nav-text">原始类型偏执</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Switch"><span class="nav-number">3.10.</span> <span class="nav-text">Switch</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Loops"><span class="nav-number">3.11.</span> <span class="nav-text">Loops</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第四章：测试"><span class="nav-number">4.</span> <span class="nav-text">第四章：测试</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -493,7 +472,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">55</span>
+          <span class="site-state-item-count">56</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -504,7 +483,7 @@
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
-        <span class="site-state-item-count">89</span>
+        <span class="site-state-item-count">91</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
