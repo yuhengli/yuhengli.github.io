@@ -278,7 +278,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">70</span>
+          <span class="site-state-item-count">71</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -423,6 +423,27 @@ NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
     new Valine({
       el         : '#valine-comments',
       verify     : false,
+      notify     : false,
+      appId      : 'GIXSWWatY9nBdifr7Hcz3Csh-MdYXbMMI',
+      appKey     : 'j2UFiSQi64I6gwpF2qnDif8h',
+      placeholder: "Just go go",
+      avatar     : 'mm',
+      meta       : guest,
+      pageSize   : '10' || 10,
+      visitor    : true,
+      lang       : '' || 'zh-cn',
+      path       : location.pathname,
+      recordIP   : false,
+      serverURLs : 'https://GIXSWWatY9nBdifr7Hcz3Csh-MdYXbMMI.api.lncldglobal.com'
+    });
+  }, window.Valine);
+});
+</script>
+
+</body>
+</html>
+
+: false,
       notify     : false,
       appId      : 'GIXSWWatY9nBdifr7Hcz3Csh-MdYXbMMI',
       appKey     : 'j2UFiSQi64I6gwpF2qnDif8h',
